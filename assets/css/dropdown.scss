@@ -1,0 +1,164 @@
+$fancy-options-padding: 10px 16px;
+
+.fancy-dropdown-wrapper {
+  position: relative;
+  &.disabled {
+    pointer-events: none;
+    .fancy-dropdown {
+      input {
+        color: gray;
+      }
+    }
+  }
+
+  input.fancy-dropdown {
+    appearance: none;
+    padding: 5px 5px 5px 14px;
+    border: 1px solid #f3f3f3;
+    border-right-width: 30px;
+    border-radius: 4px;
+    background: white;
+    width: 150px;
+    cursor: pointer;
+    outline: 0;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 30px;
+      height: 36px;
+      position: absolute;
+      right: 0;
+      border-radius: 0 4px 4px 0;
+      background-image: asset_url("angle-down.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 14px;
+      pointer-events: none;
+      transition: 0.2s ease-in-out;
+    }
+
+    &.open {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+
+    + .fancy-dropdown-options {
+      width: 250px;
+      display: none;
+      position: absolute;
+      top: 35px;
+      background: white;
+      box-shadow: 0 2px 13px 0 rgba(235, 235, 235, 0.5);
+      padding: 0;
+      border: 1px solid #efefef;
+      border-radius: 4px;
+      z-index: 300;
+      max-height: 300px;
+      overflow-y: auto;
+
+      &.show {
+        display: block;
+      }
+
+      ul.options-list {
+        margin: 0;
+        padding: 0;
+
+        li.option-item {
+          list-style: none;
+          &:last-of-type {
+            display: flex;
+            flex-direction: column;
+
+            .field-wrapper {
+              display: flex;
+            }
+          }
+
+          &.hidden {
+            display: none;
+          }
+
+          &.option-custom {
+            padding: $fancy-options-padding;
+            position: relative;
+
+            .custom-value-label {
+              font-size: 13px;
+              color: black;
+              margin-bottom: 2px;
+            }
+
+            .field-wrapper {
+              position: relative;
+              height: 40px;
+
+              .custom-value-field {
+                border: 1px solid #e6e6e6;
+                border-radius: 4px 0 0 4px;
+                background-color: #ffffff;
+                padding: 6px 10px;
+                outline: 0;
+                height: 100%;
+                border-right: 0;
+                -moz-appearance: textfield;
+                width: calc(100% - 55px);
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+              }
+
+              .custom-value-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 0 4px 4px 0;
+                color: white;
+                background: lightgreen;
+                text-transform: uppercase;
+                font-size: 13px;
+                font-weight: 600;
+                border: 1px solid lightgreen;
+                position: absolute;
+                right: 0;
+                height: 100%;
+                width: 55px;
+              }
+            }
+          }
+
+          .option-text {
+            display: flex;
+            padding: $fancy-options-padding;
+            color: black;
+            cursor: pointer;
+            border-bottom: 1px solid #ececec;
+
+            a {
+              color: #dfdfe1;
+            }
+
+            .star-icon {
+              margin-right: 20px;
+              position: relative;
+              top: 2px;
+              pointer-events: none;
+
+              &.checked {
+                color: #f9b62f;
+              }
+            }
+            &:hover {
+              background: #f7f7f7;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
