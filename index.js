@@ -7,7 +7,13 @@
     * Add dynamically updating name attr if not explicitly specified
 */
 function fancyDropdown() {
-  // Update the values of the visible dropdown and the actual hidden input field
+  /**
+   * Update the values of the visible dropdown and the actual hidden input field
+   * @date 2021-12-28
+   * @param {string} text - The text shown in the UI
+   * @param {any} value - The actual value processed
+   * @returns {any}
+   */
   const setDropdownValues = (
     text,
     value,
@@ -24,20 +30,23 @@ function fancyDropdown() {
       return;
     }
 
-    if (value) $(ref).find("input[type=hidden]").val(value);
-
+    // Update values
+    if (value) $(ref).find("input[type=hidden]").val(value.trim());
     if (text) $(ref).find("input[type=text]").val(text.trim());
 
+    // Trigger on change events in case needed
     $(ref).find("input[type=hidden]").trigger("change");
     $(ref).find("input[type=text]").trigger("change");
 
-    // Updated data-selected
-    $(ref)
-      .siblings(".fancy-dropdown-options")
-      .find(".options-list")
-      .attr("data-selected", value);
+    // Updated the data-selected attr
+    $(ref).find(".options-list").attr("data-selected", value);
   };
 
+  /**
+   * Handle the event for showing the dropdown options
+   * @date 2021-12-28
+   * @returns {any}
+   */
   const handleShowingOptions = () => {
     // Show the options when the user clicks on the dropdown
     $(document).on("click", "input.fancy-dropdown", (e) => {
@@ -53,6 +62,11 @@ function fancyDropdown() {
     });
   }
 
+  /**
+   * Handle the event for hiding the dropdown options
+   * @date 2021-12-28
+   * @returns {any}
+   */
   const handleHidingOptions = () => {
     // Hide the provider dropdown options if they are open
     $(document).on("click", (e) => {
@@ -68,6 +82,11 @@ function fancyDropdown() {
     });
   }
 
+  /**
+   * Handle the event when an option-item is selected
+   * @date 2021-12-28
+   * @returns {any}
+   */
   const handleOptionSelect = () => {
     // Provider dropdown option click handling
     $(document).on("click", ".fancy-dropdown-options .option-item", (e) => {
@@ -110,8 +129,14 @@ function fancyDropdown() {
     });
   }
 
-  const initialize = (base) => {
-    // Set initial values
+  /**
+   * Setup the fancy dropdowns in their initial state
+   * @date 2021-12-28
+   * @param {string} base - The parent wherein the fancy dropdowns are located
+   * @returns {any}
+   */
+  const setInitialValues = (base) => {
+    // TODO: Clean this up
     $(`${base} .fancy-dropdown`).each((i, el) => {
       const optionsList = $(el)
         .siblings(".fancy-dropdown-options")
@@ -145,11 +170,12 @@ function fancyDropdown() {
     });
   }
 
-  initialize(base='body');
+  setInitialValues(base='body');
   handleShowingOptions();
   handleHidingOptions();
   handleOptionSelect();
   handleCustomValues();
 }
 
+// Start up the fancy dropdowns
 fancyDropdown();
