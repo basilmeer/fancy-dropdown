@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First</title>
+  <title>Basic usage example</title>
   <link rel="stylesheet" href="../assets/css/index.css">
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../index.js"></script>
 </head>
 <body>
   Basic usage
-  <div class="fancy-dropdown-wrapper">
-    <input type="hidden" value="" />
-    <input type="text" value="" class="fancy-dropdown" readonly />
-    <div class="fancy-dropdown-options">
-      <ul class="options-list">
-        <li class="option-item" data-value="Foo">Foo</li>
-        <li class="option-item" data-value="Bar">Bar</li>
-      </ul>
-    </div>
-  </div>
+  <br />
+  With an array dataset
+  <input type="text" value="" class="fancy-dropdown" data-fd-options="['foo', 'bar']" readonly />
+  <br />
+  With a JSON dataset
+  <input type="text" value="" class="fancy-dropdown" data-fd-options="{'foo': 'bar', 'hello': 'world', 'geralt': 'witcher', 'cowboy': 'bebop'}" readonly />
+  <br />
+  <br />
+  With an explicit name attr (best-league-champion)
+  <input type="text" value="" class="fancy-dropdown" name='best-league-champion' data-fd-options="['teemo', 'garen', 'gangplank']" readonly />
 </body>
 </html>
