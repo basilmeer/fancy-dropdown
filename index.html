@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic usage example</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/prism.css">
+  <style>
+    body {
+      font-family: 'Fira Sans', sans-serif;
+      font-weight: 200;
+      word-spacing: 5px;
+      line-height: 24px;
+    }
+    .container {
+      max-width: 768px;
+      padding: 0 2rem;
+      margin: 0 auto;
+    }
+    .text-center {
+      text-align: center;
+    }
+    h1 {
+      font-weight: 300;
+    }
+    h2 {
+      font-weight: 300;
+      padding: 1em 0;
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+    }
+    h4 {
+      font-weight: 100;
+      margin: 2em 0 1em;
+    }
+    hr {
+      border: 1px solid #eee;
+      border-top: 0;
+      margin: 2em 0 1em;
+    }
+    .code-toolbar {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header text-center">
+      <h1>FancyDropdown</h1>
+      <h4>P.S. Akshan's kit in League is overloaded</h4>
+    </div>
+    <hr />
+    <div class="content">
+      <p>
+        Getting started with FD is simple. All you need is an input field with a readonly tag with the right class and you're good to go. FD takes care of the rest  so you can worry about the styling more so than anything.
+      </p>
+
+      <h2>Basic usage</h2>
+
+      <h4>With an array dataset</h4>
+      <input type="text" value="" class="fancy-dropdown" data-fd-options="['foo', 'bar']" readonly />
+      <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" data-fd-options="['foo', 'bar']" readonly /&gt;</code></pre>
+
+      <hr />
+
+      <h4>With a JSON dataset</h4>
+      <input type="text" value="" class="fancy-dropdown" data-fd-options="{'foo': 'bar', 'hello': 'world', 'geralt': 'witcher', 'cowboy': 'bebop'}" readonly />
+      <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" data-fd-options="{'foo': 'bar', 'hello': 'world', 'geralt': 'witcher', 'cowboy': 'bebop'}" readonly /&gt;</code></pre>
+
+      <hr />
+
+      <h4>With an explicit name attr <small>(best-league-champion)</small></h4>
+      <input type="text" value="" class="fancy-dropdown" name='best-league-champion' data-fd-options="['teemo', 'garen', 'gangplank']" readonly />
+      <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" name='best-league-champion' data-fd-options="['teemo', 'garen', 'gangplank']" readonly /&gt;</code></pre>
+    </div>
+  </div>
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./index.js"></script>
+  <script src="./assets/js/prism.js"></script>
+</body>
+</html>

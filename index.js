@@ -2,6 +2,7 @@
   TODO:
     * Allow support for custom values that is enabled through an option flag
     * Improve base styling and allow for easy customizable stylings
+    * Insert a sleeve for adding the animated caret
 */
 
 /**
@@ -42,6 +43,10 @@ const insertExtraHtmlElements = () => {
         </div>
       `);
     }
+
+    // if (!currentDropdown.parent().hasClass('fancy-dropdown-sleeve')) {
+    //   currentDropdown.wrap("<div class='fancy-dropdown-sleeve'></div>");
+    // }
   })
 }
 
@@ -147,7 +152,6 @@ const handleHidingOptions = () => {
 const handleOptionSelect = () => {
   // Provider dropdown option click handling
   $(document).on("click", ".fancy-dropdown-options .option-item", (e) => {
-    console.log("Option Selected!!");
     const optionItem = $(e.target);
     const optionText = optionItem.text();
     const optionValue = optionItem.attr("data-value") || optionText; // fallback to text for value if not explicit
