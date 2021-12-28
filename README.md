@@ -1,4 +1,7 @@
 # FancyDropdown
+![npm](https://img.shields.io/npm/dw/fancy-dropdown)
+![npm](https://img.shields.io/npm/v/fancy-dropdown)
+![GitHub](https://img.shields.io/github/license/basilmeer/fancy-dropdown)
 
 A small jQuery-based library that allows you to create a relatively more style-able dropdown.
 
