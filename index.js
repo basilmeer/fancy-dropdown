@@ -3,6 +3,7 @@
     * Allow support for custom values that is enabled through an option flag
     * Improve base styling and allow for easy customizable stylings
     * Insert a sleeve for adding the animated caret
+    * Insert CSS automatically on initialization
 */
 
 /**

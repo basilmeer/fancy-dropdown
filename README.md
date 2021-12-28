@@ -6,13 +6,23 @@ A small jQuery-based library that allows you to create a relatively more style-a
 
 # Usage
 
-Pretty much all you need is a readonly input field with the class `fancy-dropdown` and the options passed like so:
+Import the CSS and JS alongwith jQuery.
+
+```html
+<!-- The import methods may vary but in case of vanilla HTML, for example: -->
+<link rel="stylesheet" href="node_modules/fancy-dropdown/css/index.css">
+...
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="node_modules/fancy-dropdown/js/index.js"></script>
+```
+
+Add the class `fancy-dropdown` and the options passed to a readonly input field like so:
 
 ```html
 <input type='text' class='fancy-dropdown' data-fd-options="['foo', 'bar']" readonly />
 ```
 
-This gets transformed into a slightly fancier looking dropdown that looks something like:
+and it gets transformed into a slightly fancier looking dropdown that looks something like:
 
 ```html
 <div class="fancy-dropdown-wrapper">
@@ -59,3 +69,10 @@ Which sets the hidden input field's name attribute:
 ```html
 <input type='hidden' name='favorite-shows' />
 ```
+
+# Known Issues
+* The caret does not appear at the end of the dropdown
+* The wrapper occupies full width even though the actual dropdown should occupy as much space as it can
+
+# License
+MIT
