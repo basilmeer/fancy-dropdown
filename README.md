@@ -2,6 +2,8 @@
 
 A small jQuery-based library that allows you to create a relatively more style-able dropdown.
 
+[Demo](https://basilmeer.github.io/fancy-dropdown/)
+
 # Usage
 
 Pretty much all you need is a readonly input field with the class `fancy-dropdown` and the options passed like so:
