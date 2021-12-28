@@ -3,5 +3,11 @@
 	"version": "1.1.0",
 	"dependencies": {
 		"jquery": "^3.6.0"
-	}
+	},
+	"keywords": [
+		"jquery",
+		"dropdowns",
+		"styleable",
+		"select"
+	]
 }
