@@ -1,20 +1,11 @@
 # FancyDropdown
 
-<b>FancyDropdown</b> is a small jQuery-based library that allows you to create a relatively more style-able dropdown.
-
-This wasn't really made to compete with other dropdown libraries; this is just the cleaned up and simplified solution I came up with a year ago for a project that I've always wanted to be work in a plug-and-play fashion.
-
-<br />
-
-# Why FancyDropdown? Why not better things like Select2?
-
-If they fit the bill, why not! Go for 'em. As mentioned before, there is no motivation behind FD besides me wanting to modify my old chunk of code in a more PnP manner. There's heaps of better alternatives out there, and better alternatives that can be made yet. Would 100% recommend going for them over this.
-
-<br />
+A small jQuery-based library that allows you to create a relatively more style-able dropdown.
 
 # Usage
 
 Pretty much all you need is a readonly input field with the class `fancy-dropdown` and the options passed like so:
+
 ```html
 <input type='text' class='fancy-dropdown' data-fd-options="['foo', 'bar']" readonly />
 ```
@@ -34,8 +25,6 @@ This gets transformed into a slightly fancier looking dropdown that looks someth
 </div>
 ```
 
-<br />
-
 # Dropdown Options
 
 The options can be passed through the `data-fd-options` that can either be an array or a JSON object like so:
@@ -54,8 +43,6 @@ Which converts the input field to:
   </ul>
 </div>
 ```
-
-<br />
 
 # Name Attribute
 
