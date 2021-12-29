@@ -76,6 +76,6 @@ Which sets the hidden input field's name attribute:
 ```
 
 # Known Issues
--
+None for now
 # License
 MIT
