@@ -5,7 +5,9 @@
 
 A small jQuery-based library that allows you to create a relatively more style-able dropdown.
 
-[Demo](https://basilmeer.github.io/fancy-dropdown/)
+[Demo](https://basilmeer.github.io/fancy-dropdown) |
+[GitHub](https://github.com/basilmeer/fancy-dropdown) |
+[NPM](https://www.npmjs.com/package/fancy-dropdown)
 
 # Usage
 
