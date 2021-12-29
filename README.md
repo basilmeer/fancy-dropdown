@@ -76,8 +76,6 @@ Which sets the hidden input field's name attribute:
 ```
 
 # Known Issues
-* The caret does not appear at the end of the dropdown
-* The wrapper occupies full width even though the actual dropdown should occupy as much space as it can
-
+-
 # License
 MIT

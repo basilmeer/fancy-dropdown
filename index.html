@@ -17,6 +17,9 @@
       word-spacing: 5px;
       line-height: 24px;
     }
+    .header {
+      margin-bottom: 20px;
+    }
     .container {
       max-width: 768px;
       min-height: 100vh;
@@ -26,8 +29,8 @@
       flex-direction: column;
       justify-content: center;
     }
-    .header {
-      margin-bottom: 20px;
+    .container .fancy-dropdown-wrapper {
+      max-width: 250px;
     }
     .text-center {
       text-align: center;
@@ -96,6 +99,13 @@
       <p>With an explicit name attr <small>(best-league-champion)</small></p>
       <input type="text" value="" class="fancy-dropdown" name='best-league-champion' data-fd-options="['teemo', 'garen', 'gangplank']" readonly />
       <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" name='best-league-champion' data-fd-options="['teemo', 'garen', 'gangplank']" readonly /&gt;</code></pre>
+
+      <hr />
+
+      <p>With a variable width</p>
+      <input type="range" class="width-changer" min="0" max="100" value="25" />
+      <input type="text" value="" class="fancy-dropdown" name='best-series' data-fd-options="['avatar the last airbender']" readonly />
+      <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" name='best-series' data-fd-options="['avatar the last airbender']" readonly /&gt;</code></pre>
     </div>
     <hr />
     <div class="footer text-center">
@@ -105,5 +115,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="./index.js"></script>
   <script src="./assets/js/prism.js"></script>
+  <script>
+    $(".width-changer").on("input change", (e) => {
+      const self = $(e.target);
+
+      self.next().css({ 'max-width': `${self.val()}%` });
+    });
+  </script>
 </body>
 </html>

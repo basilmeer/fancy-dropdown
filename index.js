@@ -45,9 +45,9 @@ const insertExtraHtmlElements = () => {
       `);
     }
 
-    // if (!currentDropdown.parent().hasClass('fancy-dropdown-sleeve')) {
-    //   currentDropdown.wrap("<div class='fancy-dropdown-sleeve'></div>");
-    // }
+    if (!currentDropdown.parent().hasClass('fancy-dropdown-sleeve')) {
+      currentDropdown.wrap("<div class='fancy-dropdown-sleeve'></div>");
+    }
   })
 }
 
@@ -68,13 +68,13 @@ const insertDropdownOptions = () => {
     if (Array.isArray(currDropOptions)) {
       // We use indices as values if options are an array; otherwise
       $.each(currDropOptions, (i, el) => {
-        currentDropdown.siblings('.fancy-dropdown-options').children('.options-list').append(
+        currentDropdown.parent().siblings('.fancy-dropdown-options').children('.options-list').append(
           `<li class="option-item" data-value="${i}">${el}</li>`)
       });
     } else {
       // We use keys as text, and their values as literal values
       $.each(currDropOptions, (key, val) => {
-        currentDropdown.siblings('.fancy-dropdown-options').children('.options-list').append(
+        currentDropdown.parent().siblings('.fancy-dropdown-options').children('.options-list').append(
           `<li class="option-item" data-value="${val}">${key}</li>`)
       });
     }
@@ -118,10 +118,10 @@ const handleShowingOptions = () => {
       .parents(".fancy-dropdown-wrapper")
       .find(".fancy-dropdown-options");
 
-    $(".fancy-dropdown").removeClass("open");
+    $(".fancy-dropdown-wrapper").removeClass("open");
     $(".fancy-dropdown-options").removeClass("show");
-    dropdownOptions.addClass("show");
-    dropdown.parents(".fancy-dropdown").addClass("open");
+     dropdownOptions.addClass("show");
+    dropdown.parents(".fancy-dropdown-wrapper").addClass("open");
   });
 }
 
@@ -140,7 +140,7 @@ const handleHidingOptions = () => {
       $(e.target).is(":not(.proceed-btn)")
     ) {
       $(".fancy-dropdown-options").removeClass("show");
-      $(".fancy-dropdown").removeClass("open");
+      $(".fancy-dropdown-wrapper").removeClass("open");
     }
   });
 }
@@ -199,12 +199,11 @@ const handleCustomValues = () => {
  */
 const setInitialValues = () => {
   $('.fancy-dropdown').each((i, el) => {
-    const options = $(el).siblings(".fancy-dropdown-options");
+    const options = $(el).parent().siblings(".fancy-dropdown-options");
     const optionsList = options.find(".options-list");
     const firstOption = options.find(".option-item").first();
     let value = optionsList.data("selected");
     let text = firstOption.text();
-
 
     // Check if the selected attr has no value; if not then use the first available value
     if (!value?.length) {
@@ -230,4 +229,4 @@ const initializeFancyDropdown = () => {
 // Start up the fancy dropdowns
 $(function() {
   initializeFancyDropdown();
-})
+});
