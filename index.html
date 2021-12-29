@@ -13,38 +13,56 @@
   <style>
     body {
       font-family: 'Fira Sans', sans-serif;
-      font-weight: 200;
+      font-weight: 300;
       word-spacing: 5px;
       line-height: 24px;
     }
     .container {
       max-width: 768px;
+      min-height: 100vh;
       padding: 0 2rem;
-      margin: 0 auto;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .header {
+      margin-bottom: 20px;
     }
     .text-center {
       text-align: center;
     }
     h1 {
-      font-weight: 300;
+      font-weight: 500;
+      font-size: 42px;
+      text-decoration:
     }
     h2 {
       font-weight: 300;
       padding: 1em 0;
       margin-top: 0;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #e7e7e7;
     }
     h4 {
       font-weight: 100;
       margin: 2em 0 1em;
     }
     hr {
-      border: 1px solid #eee;
+      border: 1px solid #e7e7e7;
       border-top: 0;
       margin: 2em 0 1em;
     }
+    p code {
+      font-size: 13px !important;
+    }
     .code-toolbar {
       margin-top: 10px;
+    }
+    .footer {
+      color: gray;
+    }
+    .copyright {
+      font-size: 13px;
     }
   </style>
 </head>
@@ -54,29 +72,34 @@
       <h1>FancyDropdown</h1>
       <h4>P.S. Akshan's kit in League is overloaded</h4>
     </div>
-    <hr />
     <div class="content">
+      <h2>Getting Started</h2>
+
       <p>
-        Getting started with FD is simple. All you need is an input field with a readonly tag with the right class and you're good to go. FD takes care of the rest  so you can worry about the styling more so than anything.
+        Simple: add the class <code class="language-css">.fancy-dropdown</code> and the options passed to a readonly input field and FD will kick in.
       </p>
 
       <h2>Basic usage</h2>
 
-      <h4>With an array dataset</h4>
+      <p>With an array dataset</p>
       <input type="text" value="" class="fancy-dropdown" data-fd-options="['foo', 'bar']" readonly />
       <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" data-fd-options="['foo', 'bar']" readonly /&gt;</code></pre>
 
       <hr />
 
-      <h4>With a JSON dataset</h4>
+      <p>With a JSON dataset</p>
       <input type="text" value="" class="fancy-dropdown" data-fd-options="{'foo': 'bar', 'hello': 'world', 'geralt': 'witcher', 'cowboy': 'bebop'}" readonly />
       <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" data-fd-options="{'foo': 'bar', 'hello': 'world', 'geralt': 'witcher', 'cowboy': 'bebop'}" readonly /&gt;</code></pre>
 
       <hr />
 
-      <h4>With an explicit name attr <small>(best-league-champion)</small></h4>
+      <p>With an explicit name attr <small>(best-league-champion)</small></p>
       <input type="text" value="" class="fancy-dropdown" name='best-league-champion' data-fd-options="['teemo', 'garen', 'gangplank']" readonly />
       <pre><code class="language-markup">&lt;input type="text" value="" class="fancy-dropdown" name='best-league-champion' data-fd-options="['teemo', 'garen', 'gangplank']" readonly /&gt;</code></pre>
+    </div>
+    <hr />
+    <div class="footer text-center">
+      <div class="copyright">Copyright &copy; 2021 Basil Meer.</div>
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
